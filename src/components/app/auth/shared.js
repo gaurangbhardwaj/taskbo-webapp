@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import Logo from "components/shared/logo";
 
 export const Page = styled.div`
   display: flex;
@@ -22,16 +23,8 @@ export const Container = styled.div`
     0 100px 80px rgba(0, 0, 0, 0.12);
 `;
 
-export const Title = styled.div`
-  display: flex;
-  flex-direction: row;
-  color: #017de8;
-  font-size: 36px;
+export const Title = styled(Logo)`
   padding-bottom: 20px;
-  align-items: center;
-  i {
-    font-size: 20px;
-  }
 `;
 
 export const InputBox = styled.input`

@@ -15,18 +15,26 @@ const auth = firebase
 export const signUp = async (email, password) => {
   return await auth
     .createUserWithEmailAndPassword(email, password)
-    .then((response) => response)
-    .catch((error) => error);
+    .then(() =>
+      auth.currentUser.getIdToken().then((token) => Promise.resolve(token))
+    )
+    .catch((err) => Promise.reject(err))
+    .catch((err) => Promise.reject(err));
 };
 
 export const logIn = async (email, password) => {
   return await auth
     .signInWithEmailAndPassword(email, password)
-    .then(() => auth.currentUser.getIdToken().then((token) => token))
-    .catch((err) => err)
-    .catch((err) => err);
+    .then(() =>
+      auth.currentUser.getIdToken().then((token) => Promise.resolve(token))
+    )
+    .catch((err) => Promise.reject(err))
+    .catch((err) => Promise.reject(err));
 };
 
-export const signOut = () => {
-  return auth.signOut();
+export const signOut = async () => {
+  return await auth
+    .signOut()
+    .then((res) => Promise.resolve(res))
+    .catch((err) => Promise.reject(err));
 };

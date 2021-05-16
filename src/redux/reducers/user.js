@@ -1,14 +1,15 @@
-import sessionManager from "manager/session-manager";
+import { getDataFromLocalStorage } from "manager/session-manager";
 import { cookiesConstants, ReduxEvent } from "constant";
 
-const userData = sessionManager.getDataFromCookies(cookiesConstants.USER) || "";
-const sessionToken =
-  sessionManager.getDataFromCookies(cookiesConstants.SESSION_TOKEN) || "";
+const userDetails = getDataFromLocalStorage(cookiesConstants.USER_DETAILS) || "";
+const token = getDataFromLocalStorage(cookiesConstants.TOKEN) || "";
+const isLoggedIn =
+  getDataFromLocalStorage(cookiesConstants.IS_LOGGED_IN) || false;
 
 const initialState = {
-  userDetails: userData,
-  sessionToken: sessionToken,
-  isLoggedIn: false,
+  userDetails: userDetails,
+  token: token,
+  isLoggedIn: isLoggedIn,
 };
 
 export default function user(state = initialState, action) {

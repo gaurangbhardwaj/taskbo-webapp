@@ -6,6 +6,7 @@ import {
   InputBox,
   SubmitButton,
   Link,
+  Error,
 } from "../shared";
 import History from "manager/history";
 
@@ -38,10 +39,11 @@ const SignUpForm = ({ userData, setUserData, error, onSubmitClick }) => (
           setUserData({ ...userData, confirmPassword: target.value })
         }
       />
+      {error && <Error>Error : {error}</Error>}
       <SubmitButton
         onClick={onSubmitClick}
-        isDisabled={
-          !userData.username ||
+        disabled={
+          !userData.emailId ||
           !userData.password ||
           userData.password !== userData.confirmPassword
         }

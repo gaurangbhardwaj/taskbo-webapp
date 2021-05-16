@@ -2,18 +2,7 @@ import Cookies from "universal-cookie";
 
 const cookies = new Cookies();
 
-const sessionManager = {
-  setDataInCookies,
-  getDataFromCookies,
-  removeDataFromCookies,
-  setDataInLocalStorage,
-  getDataFromLocalStorage,
-  removeDataFromLocalStorage,
-};
-
-export default sessionManager;
-
-function setDataInCookies(data, key) {
+function setDataInCookies(key, data) {
   cookies.set(key, JSON.stringify(data), { path: "/" });
 }
 
@@ -25,7 +14,7 @@ function removeDataFromCookies(key) {
   cookies.remove(key, { path: "/" });
 }
 
-function setDataInLocalStorage(data, key) {
+function setDataInLocalStorage(key, data) {
   localStorage[key] = JSON.stringify(data);
 }
 
@@ -40,3 +29,12 @@ function getDataFromLocalStorage(key) {
 function removeDataFromLocalStorage(key) {
   return localStorage.removeItem(key);
 }
+
+export {
+  setDataInCookies,
+  getDataFromCookies,
+  removeDataFromCookies,
+  setDataInLocalStorage,
+  getDataFromLocalStorage,
+  removeDataFromLocalStorage,
+};

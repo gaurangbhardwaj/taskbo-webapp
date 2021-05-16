@@ -8,10 +8,9 @@ export const httpConstants = {
 };
 
 export const cookiesConstants = {
-  DEVICE_ID: "deviceId",
-  SESSION_TOKEN: "sessionToken",
-  USER: "user",
-  USER_PERMISSION: "userPermission",
+  TOKEN: "token",
+  USER_DETAILS: "user-details",
+  IS_LOGGED_IN: "is-logged-in",
 };
 
 export const ReduxEvent = {
@@ -19,4 +18,12 @@ export const ReduxEvent = {
   HIDE_LOADER: "HIDE_LOADER",
   LOGGED_IN: "LOGGED_IN",
   LOGGED_OUT: "LOGGED_OUT",
+  GET_TASK: "GET_TASK",
+  ADD_TASK: "ADD_TASK",
+  UPDATE_TASK: "UPDATE_TASK",
+  DELETE_TASK: "DELETE_TASK",
+  GET_BUCKET: "GET_BUCKET",
+  ADD_BUCKET: "ADD_BUCKET",
+  UPDATE_BUCKET: "UPDATE_BUCKET",
+  DELETE_BUCKET: "DELETE_BUCKET",
 };
