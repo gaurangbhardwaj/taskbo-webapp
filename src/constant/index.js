@@ -27,3 +27,14 @@ export const ReduxEvent = {
   UPDATE_BUCKET: "UPDATE_BUCKET",
   DELETE_BUCKET: "DELETE_BUCKET",
 };
+
+export const TaskPriority = {
+  HIGH: "HIGH",
+  MEDIUM: "MEDIUM",
+  NORMAL: "NORMAL",
+};
+
+export const TaskStatus = {
+  COMPLETED: "COMPLETED",
+  INCOMPLETE: "INCOMPLETE",
+};
